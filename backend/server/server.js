@@ -1,10 +1,9 @@
-import express, { json } from "express";
-import cors from "cors";
-
+const express = require("express");
+const cors = require("cors");
 const app = express();
-app.disable("x-powered-by");
-const PORT = 3000;
-import routes from "../routes/routes.js";
+
+const PORT = process.env.PORT || 3000;
+const routes = require("../routes/routes.js");
 
 const corsOptions = {
    origin: '*',
@@ -14,7 +13,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(json());
+app.use(express.json());
 app.use(routes);
 
 app.listen(PORT, () => {

@@ -1,4 +1,4 @@
-import { auth } from 'express-oauth2-jwt-bearer';
+const { auth } = require('express-oauth2-jwt-bearer');
 
 const jwtCheck = auth({
   audience: 'https://spirit-shop.com',
@@ -6,4 +6,4 @@ const jwtCheck = auth({
   tokenSigningAlg: 'HS256'
 });
 
-export default jwtCheck
+module.exports = jwtCheck

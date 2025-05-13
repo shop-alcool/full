@@ -3,7 +3,7 @@ const app = express.Router();
 const jwtCheck = require('../Controller/Auth/Auth.js');
 const client = require('../Donnée/Connexion_DB.js');
 
-app.use(json());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send({ message: 'Hello, world!' });
@@ -82,4 +82,4 @@ app.delete('/alcool/:id', function (req, res) {
         });
 });
 
-export default app;
+module.exports = app;
