@@ -1,0 +1,70 @@
+{
+    "name": "shop_alcool",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Restfull api for a alcohol shop",
+    "main": "backend/server/server.js",
+    "scripts": {
+        "start": "nodemon -r dotenv/config backend/server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shop-alcool/api.git"
+    },
+    "author": "Th4End",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shop-alcool/api/issues"
+    },
+    "homepage": "https://github.com/shop-alcool/api#readme",
+    "dependencies": {
+        "@base-ui-components/react": "^1.0.0-alpha.6",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^6.4.0",
+        "@mui/joy": "^5.0.0-beta.51",
+        "@mui/material": "^6.4.0",
+        "api": "file:",
+        "axios": "^1.7.9",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "datasource": "^0.0.1",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "express-oauth2-jwt-bearer": "^1.6.0",
+        "express-openid-connect": "^2.17.1",
+        "framer-motion": "^11.18.0",
+        "jsonwebtoken": "^9.0.2",
+        "nodemon": "^3.1.9",
+        "pg": "^8.13.1",
+        "pg-hstore": "^2.3.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^7.3.0",
+        "sequelize": "^6.37.5",
+        "shop_alcool": "file:"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.22.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-react": "^7.37.4",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "globals": "^15.14.0",
+        "sonar-scanner": "^3.1.0",
+        "ts-node": "^10.9.2",
+        "vite": "^6.2.3"
+    },
+    "keywords": []
+}
