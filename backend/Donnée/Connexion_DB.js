@@ -1,15 +1,14 @@
+require('dotenv').config({ path: __dirname + '/../.env' });
 const { Client } = require('pg');
-console.log(process.env.USER);
-console.log(process.env.DATABASE);
+console.log('USER:', process.env.USER);
+console.log('DB:', process.env.DATABASE);
 const client = new Client({
   host: process.env.HOST,
   port: 5432,
   user: process.env.USER,
-  password: process.env.PWD,
+  password: process.env.DB_PASSWORD,
   database: process.env.DATABASE,
 });
-
-
 
 client.connect()
   .then(() => {
@@ -17,5 +16,9 @@ client.connect()
   })
   .catch(err => {
     console.error('Erreur de connexion:', err);
-  })
-module.exports = client;
+  });
+
+module.exports = {
+  client,
+  query: (...args) => client.query(...args)
+};

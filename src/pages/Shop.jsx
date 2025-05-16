@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { Container, Box, Typography } from '@mui/material';
 import ProductCard from '../components/ProductCard';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { getProducts } from '../api/api.jsx';
+import CartContext from '../components/CartContext';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     getProducts()
@@ -28,7 +30,7 @@ const Shop = () => {
         gap={4}
       >
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} addToCart={addToCart} />
         ))}
       </Box>
     </Container>

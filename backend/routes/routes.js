@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express.Router();
 const jwtCheck = require('../Controller/Auth/Auth.js');
-const client = require('../Donnée/Connexion_DB.js');
+const { query } = require('../Donnée/Connexion_DB.js');
 
 app.use(express.json());
 
@@ -11,10 +11,8 @@ app.get('/', (req, res) => {
 
 app.get('/alcool', async (req, res) => {
     try {
-        const result = query('SELECT shop_item.id, alcohol_id, shop_id, price, name, image FROM shop_item INNER JOIN alcohol ON alcohol.id = shop_item.alcohol_id;');
-        
-        if (result.length === 0) {
-            console.log(result); 
+        const result = await query('SELECT shop_item.id, alcohol_id, shop_id, price, name, image FROM shop_item INNER JOIN alcohol ON alcohol.id = shop_item.alcohol_id;');
+        if (result.rows.length === 0) {
             return res.status(404).send({ message: 'Aucun alcool trouvé' });
         }
         res.status(200).send(result.rows);

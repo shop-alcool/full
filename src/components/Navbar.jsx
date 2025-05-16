@@ -38,7 +38,7 @@ const Navbar = () => {
             Spirit Shop
           </Typography>
           <Menu />
-          <IconButton component={Link} to="/shop" sx={{ color: 'purple' }}> 
+          <IconButton component={Link} to="/cart" sx={{ color: 'purple' }}> 
             <Badge badgeContent={cart.length} color="secondary">
               <ShoppingCartIcon />
             </Badge>
