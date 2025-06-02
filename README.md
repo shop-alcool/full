@@ -14,3 +14,15 @@ pour lancer le serveur vite pour le front end faire :
     npm run dev
 pour lancer le serveur back-end faire :
     npm run start
+
+# Module Application Web 
+
+Ajouts réalisés
+
+Une base de donnée NoSQL Redis 
+Un déploiement avec 
+Une fonction de paiement par carte ou via Paypal (API pour les paiements sécurisés)
+Un panier fonctionnel totalement
+
+# Url du site déployer
+``
