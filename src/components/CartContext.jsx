@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { createContext, useState, useMemo } from 'react';
+import { createContext, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -12,7 +12,15 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => [...prevCart, product]);
   };
 
-  const contextValue = useMemo(() => ({ cart, addToCart }), [cart]);
+  const removeFromCart = (idx) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== idx));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const contextValue = useMemo(() => ({ cart, addToCart, removeFromCart, clearCart }), [cart]);
 
   return (
     <CartContext.Provider value={contextValue}>
