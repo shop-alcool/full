@@ -28,6 +28,7 @@
         "@mui/icons-material": "^6.4.0",
         "@mui/joy": "^5.0.0-beta.51",
         "@mui/material": "^6.4.0",
+        "@paypal/checkout-server-sdk": "^1.0.3",
         "api": "file:",
         "axios": "^1.7.9",
         "bcryptjs": "^2.4.3",

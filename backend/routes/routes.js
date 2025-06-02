@@ -2,6 +2,7 @@ const express = require('express');
 const app = express.Router();
 const jwtCheck = require('../Controller/Auth/Auth.js');
 const { query } = require('../Donnée/Connexion_DB.js');
+const { verifyOrder } = require('../Controller/PaypalController');
 
 app.use(express.json());
 
@@ -79,5 +80,7 @@ app.delete('/alcool/:id', function (req, res) {
             res.status(500).send({ message: 'Erreur interne du serveur', error: err });
         });
 });
+
+app.post('/paypal/verify', verifyOrder);
 
 module.exports = app;
