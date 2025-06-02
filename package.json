@@ -29,7 +29,6 @@
         "@mui/joy": "^5.0.0-beta.51",
         "@mui/material": "^6.4.0",
         "@paypal/checkout-server-sdk": "^1.0.3",
-        "api": "file:",
         "axios": "^1.7.9",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.20.3",
@@ -47,8 +46,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^7.3.0",
-        "sequelize": "^6.37.5",
-        "shop_alcool": "file:"
+        "sequelize": "^6.37.5"
     },
     "devDependencies": {
         "@eslint/js": "^9.22.0",
