@@ -49,6 +49,7 @@ const Cart = () => {
             }
 
             clearCart();
+            window.location.href = '/';
           });
         }
       }).render(paypalRef.current);
