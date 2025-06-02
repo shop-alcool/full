@@ -6,9 +6,9 @@ const Redis = require('ioredis');
 const dotenv = require('dotenv');
 dotenv.config();
 const redis = new Redis({ host: process.env.REDISHOST, port: process.env.REDISPORT });
-console.log(process.env.REDISHOST, process.env.REDISPORT);
-console.log(process.env.USER);
-console.log(redis);
+// console.log(process.env.REDISHOST, process.env.REDISPORT);
+// console.log(process.env.USER);
+// console.log(redis);
 
 app.use(express.json());
 const logToRedis = async (message) => {

@@ -1,9 +1,9 @@
-require('dotenv').config({ path: __dirname + '/../.env' });
 //const { Client } = require('pg');
 const mysql = require('mysql2')
 console.log('USER:', process.env.USER);
 console.log('DB:', process.env.DATABASE);
-console.log('USER:', process.env.USER)
+console.log('password : ', process.env.DB_PASSWORD);
+console.log('database :', process.env.DATABASE);
 // const client = new Client({
 //   host: process.env.HOST,
 //   port: process.env.PORT,
