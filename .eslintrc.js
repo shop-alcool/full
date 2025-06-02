@@ -1,6 +1,7 @@
 export const env = {
     browser: true,
     es2021: true,
+    node: true,
 };
 export const extendsConfig = [
     'eslint:recommended',

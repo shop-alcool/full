@@ -12,7 +12,6 @@ function client() {
   return new paypal.core.PayPalHttpClient(environment());
 }
 
-// Vérification d'un paiement PayPal
 async function verifyOrder(req, res) {
   const { orderID } = req.body;
   if (!orderID) return res.status(400).json({ error: 'orderID manquant' });
@@ -20,7 +19,6 @@ async function verifyOrder(req, res) {
   const request = new paypal.orders.OrdersGetRequest(orderID);
   try {
     const response = await client().execute(request);
-    // Ici tu peux enregistrer la commande dans ta BDD si tu veux
     return res.status(200).json({ status: response.result.status, details: response.result });
   } catch (err) {
     return res.status(500).json({ error: 'Erreur lors de la vérification PayPal', details: err.message });

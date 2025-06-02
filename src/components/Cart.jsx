@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Container, Typography, List, ListItem, ListItemText } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import CartContext from './CartContext';
@@ -20,7 +20,7 @@ const Cart = () => {
     }
 
     const script = document.createElement("script");
-    script.src = `https://www.paypal.com/sdk/js?client-id=Ael7iDNbmWhX1spCOhefI9sKZUfjKaaoCfItakYNXPWNMmJ9rA1qF22YDJm9N2hp0AHS0UjopQ5kuNc4`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=` + import.meta.env.VITE_PAYPAL_CLIENT_ID;
     script.addEventListener("load", () => {
       window.paypal.Buttons({
         createOrder: (data, actions) => {
@@ -37,7 +37,7 @@ const Cart = () => {
             alert(`Transaction completed by ${details.payer.name.given_name}`);
 
             try {
-              await fetch('http://localhost:3000/paypal/verify', {
+              await fetch(import.meta.env.VITE_PAYPAL_VERIFY_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orderID: data.orderID })
